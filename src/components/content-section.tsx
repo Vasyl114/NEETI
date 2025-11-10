@@ -14,7 +14,7 @@ export default function ContentSection({
   return (
     <section 
       className="py-20 px-4"
-      style={{ backgroundColor: 'var(--cosmic-void)' }}
+      style={{ backgroundColor: '#000000' }}
     >
       <div className={`max-w-6xl mx-auto flex flex-col ${reverse ? 'md:flex-row-reverse' : 'md:flex-row'} gap-12 items-center`}>
         {/* Text Content */}

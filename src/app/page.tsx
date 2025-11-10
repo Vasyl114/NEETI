@@ -4,10 +4,7 @@ import ContentSection from '@/components/content-section';
 
 export default function Home() {
   return (
-    <div 
-      className="min-h-screen"
-      style={{ backgroundColor: 'var(--cosmic-void)' }}
-    >
+    <div className="relative min-h-screen">
       <SpaceNavigation />
       <SpaceHero />
       

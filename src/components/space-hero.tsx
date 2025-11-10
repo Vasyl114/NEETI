@@ -13,63 +13,101 @@ export default function SpaceHero() {
   return (
     <section 
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
-      style={{ backgroundColor: 'var(--cosmic-void)' }}
+      style={{ backgroundColor: '#000000' }}
     >
-      {/* Earth curvature at top */}
+      {/* Starfield background */}
+      <div className="absolute inset-0">
+        {/* Multiple layers of stars for depth */}
+        {mounted && (
+          <>
+            {/* Large stars */}
+            {[...Array(50)].map((_, i) => (
+              <div
+                key={`star-large-${i}`}
+                className="absolute rounded-full bg-white"
+                style={{
+                  width: Math.random() * 2 + 1 + 'px',
+                  height: Math.random() * 2 + 1 + 'px',
+                  top: Math.random() * 100 + '%',
+                  left: Math.random() * 100 + '%',
+                  opacity: Math.random() * 0.5 + 0.5,
+                  animation: `twinkle ${Math.random() * 3 + 2}s ease-in-out infinite`,
+                  animationDelay: `${Math.random() * 2}s`,
+                }}
+              />
+            ))}
+            {/* Medium stars */}
+            {[...Array(100)].map((_, i) => (
+              <div
+                key={`star-medium-${i}`}
+                className="absolute rounded-full bg-white"
+                style={{
+                  width: '1px',
+                  height: '1px',
+                  top: Math.random() * 100 + '%',
+                  left: Math.random() * 100 + '%',
+                  opacity: Math.random() * 0.4 + 0.3,
+                  animation: `twinkle ${Math.random() * 4 + 3}s ease-in-out infinite`,
+                  animationDelay: `${Math.random() * 3}s`,
+                }}
+              />
+            ))}
+            {/* Small stars */}
+            {[...Array(200)].map((_, i) => (
+              <div
+                key={`star-small-${i}`}
+                className="absolute rounded-full bg-white"
+                style={{
+                  width: '0.5px',
+                  height: '0.5px',
+                  top: Math.random() * 100 + '%',
+                  left: Math.random() * 100 + '%',
+                  opacity: Math.random() * 0.3 + 0.2,
+                }}
+              />
+            ))}
+          </>
+        )}
+      </div>
+
+      {/* Earth glimpse at top - scrolls with page */}
       <div 
-        className="absolute top-0 left-0 right-0 h-[60vh]"
+        className="absolute top-0 left-0 right-0 h-[50vh]"
         style={{
-          background: 'radial-gradient(ellipse 150% 100% at 50% -20%, #2a5a8a 0%, #1a3a5a 30%, transparent 60%)',
-          opacity: 0.7,
+          backgroundImage: 'url(/earth-space.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center bottom',
+          backgroundRepeat: 'no-repeat',
         }}
       />
 
-      {/* Stars background */}
+      {/* Gradient fade from Earth to deep space */}
       <div 
-        className="absolute inset-0"
+        className="absolute top-0 left-0 right-0 h-screen"
         style={{
-          backgroundImage: `
-            radial-gradient(2px 2px at 20% 30%, white, transparent),
-            radial-gradient(2px 2px at 60% 70%, white, transparent),
-            radial-gradient(1px 1px at 50% 50%, white, transparent),
-            radial-gradient(1px 1px at 80% 10%, white, transparent),
-            radial-gradient(2px 2px at 90% 60%, white, transparent),
-            radial-gradient(1px 1px at 33% 80%, white, transparent),
-            radial-gradient(1px 1px at 15% 90%, white, transparent)
-          `,
-          backgroundSize: '200% 200%',
-          backgroundPosition: '0% 0%',
-          opacity: 0.8,
+          background: 'linear-gradient(to bottom, transparent 0%, transparent 20%, rgba(0, 0, 0, 0.5) 35%, rgba(0, 0, 0, 0.9) 50%, #000000 65%)',
         }}
       />
 
       {/* Shooting stars */}
       {mounted && (
         <>
-          {[...Array(5)].map((_, i) => (
+          {[...Array(8)].map((_, i) => (
             <div
               key={i}
               className="shooting-star"
               style={{
-                top: Math.random() * 50 + '%',
+                top: Math.random() * 60 + '%',
                 left: Math.random() * 100 + '%',
-                animationDelay: `${i * 3}s`,
-                animationDuration: `${3 + Math.random() * 2}s`,
+                animationDelay: `${i * 2.5}s`,
+                animationDuration: `${2.5 + Math.random() * 2}s`,
               }}
             />
           ))}
         </>
       )}
 
-      {/* Fade to bottom */}
-      <div 
-        className="absolute bottom-0 left-0 right-0 h-32"
-        style={{
-          background: 'linear-gradient(to bottom, transparent, var(--cosmic-void))',
-        }}
-      />
-
-      {/* Content */}
+      {/* NEETI Logo and content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         <h1 
           className={`text-7xl md:text-9xl font-bold mb-6 tracking-wider ${mounted ? 'fade-in' : 'opacity-0'}`}
@@ -95,7 +133,7 @@ export default function SpaceHero() {
 
       {/* Scroll indicator */}
       <div 
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 scroll-indicator cursor-pointer"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 scroll-indicator cursor-pointer z-10"
         style={{ color: 'var(--digital-cyan)' }}
         onClick={() => {
           window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
