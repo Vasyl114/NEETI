@@ -72,12 +72,20 @@ export default function SpaceHero() {
 
       {/* Earth glimpse at top - scrolls with page */}
       <div 
-        className="absolute top-0 left-0 right-0 h-[50vh]"
+        className="absolute top-0 left-0 right-0 h-[60vh] w-full"
         style={{
-          backgroundImage: 'url(/earth-space.png)',
+          backgroundImage: 'url(/earth-custom.png)',
           backgroundSize: 'cover',
-          backgroundPosition: 'center bottom',
+          backgroundPosition: 'center center',
           backgroundRepeat: 'no-repeat',
+        }}
+      />
+
+      {/* Edge fade for seamless Earth transition */}
+      <div 
+        className="absolute top-0 left-0 right-0 h-[60vh]"
+        style={{
+          background: 'radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0.7) 80%, #000000 100%)',
         }}
       />
 
@@ -85,22 +93,22 @@ export default function SpaceHero() {
       <div 
         className="absolute top-0 left-0 right-0 h-screen"
         style={{
-          background: 'linear-gradient(to bottom, transparent 0%, transparent 20%, rgba(0, 0, 0, 0.5) 35%, rgba(0, 0, 0, 0.9) 50%, #000000 65%)',
+          background: 'linear-gradient(to bottom, transparent 0%, transparent 25%, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0.9) 55%, #000000 70%)',
         }}
       />
 
       {/* Shooting stars */}
       {mounted && (
         <>
-          {[...Array(8)].map((_, i) => (
+          {[...Array(3)].map((_, i) => (
             <div
               key={i}
               className="shooting-star"
               style={{
                 top: Math.random() * 60 + '%',
-                left: Math.random() * 100 + '%',
-                animationDelay: `${i * 2.5}s`,
-                animationDuration: `${2.5 + Math.random() * 2}s`,
+                left: Math.random() * 120 + '%',
+                animationDelay: `${i * 5}s`,
+                animationDuration: `${3 + Math.random() * 2}s`,
               }}
             />
           ))}

@@ -102,11 +102,11 @@
 
 @keyframes shooting-star {
   0% {
-    transform: translateX(0) translateY(0);
+    transform: translateX(0) translateY(0) rotate(-45deg);
     opacity: 1;
   }
   100% {
-    transform: translateX(-300px) translateY(300px);
+    transform: translateX(-300px) translateY(300px) rotate(-45deg);
     opacity: 0;
   }
 }
@@ -128,7 +128,7 @@
   position: absolute;
   width: 2px;
   height: 2px;
-  background: linear-gradient(90deg, var(--digital-cyan), transparent);
+  background: var(--digital-cyan);
   border-radius: 50%;
   box-shadow: 0 0 10px var(--digital-cyan);
   animation: shooting-star 3s linear infinite;
@@ -138,11 +138,13 @@
 .shooting-star::before {
   content: '';
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 50px;
-  height: 1px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 2px;
   background: linear-gradient(90deg, var(--digital-cyan), transparent);
+  transform-origin: left center;
 }
 
 .scroll-indicator {
