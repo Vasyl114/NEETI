@@ -5,7 +5,7 @@ import Footer from "@/components/footer";
 
 export default function Home() {
   return (
-    <div style={{ backgroundColor: "var(--cosmic-void)" }}>
+    <div className="relative min-h-screen">
       <SpaceNavigation />
       <SpaceHero />
 
