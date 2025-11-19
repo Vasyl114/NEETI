@@ -5,7 +5,7 @@ import Footer from "@/components/footer";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen">
+    <div style={{ backgroundColor: "var(--cosmic-void)" }}>
       <SpaceNavigation />
       <SpaceHero />
 
@@ -13,6 +13,7 @@ export default function Home() {
         title="About Us"
         content="Our team is powered by student volunteers dedicated to enhancing the IST community. We create and manage engaging events and activities that foster connection, learning, and growth."
         imageUrl="/team2526.jpg"
+        buttonLink="/team"
       />
 
       <ContentSection
@@ -20,12 +21,14 @@ export default function Home() {
         content="Every year, we work to bring our Bachelor's and Master's degree programs to more and more students across the country, by visiting schools and participation in events such as Futurália."
         imageUrl="/polo-tagus.jpg"
         reverse
+        buttonLink="/curso"
       />
 
       <ContentSection
         title="SHELF - Our repository"
         content="We provide students with the study materials they need to succeed academically and prepare for their future careers."
         imageUrl="/telecom.jpg"
+        buttonLink="/shelf"
       />
 
       <Footer />

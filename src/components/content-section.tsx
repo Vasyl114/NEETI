@@ -1,15 +1,19 @@
+import Link from 'next/link';
+
 interface ContentSectionProps {
   title?: string;
   content?: string;
   imageUrl?: string;
   reverse?: boolean;
+  buttonLink?: string;
 }
 
 export default function ContentSection({ 
   title = "Section Title",
   content = "Add your content here. This is a placeholder text that demonstrates how your content will appear in this section.",
   imageUrl = "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80",
-  reverse = false
+  reverse = false,
+  buttonLink = "#"
 }: ContentSectionProps) {
   return (
     <section 
@@ -36,15 +40,16 @@ export default function ContentSection({
             {content}
           </p>
 
-          <button
-            className="px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:-translate-y-0.5 hover:shadow-[0_8px_25px_var(--digital-cyan)]"
+          <Link
+            href={buttonLink}
+            className="inline-block px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:-translate-y-0.5 hover:shadow-[0_8px_25px_var(--digital-cyan)]"
             style={{
               backgroundColor: 'var(--plasma-magenta)',
               color: 'var(--starlight)',
             }}
           >
             Learn More
-          </button>
+          </Link>
         </div>
 
         {/* Image */}

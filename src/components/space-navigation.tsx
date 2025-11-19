@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, Users, BookOpen, X, Home } from 'lucide-react';
+import { Menu, Users, BookOpen, X, Home, GraduationCap, Store, Phone } from 'lucide-react';
 import { useState } from 'react';
 
 export default function SpaceNavigation() {
@@ -11,8 +11,11 @@ export default function SpaceNavigation() {
 
   const menuItems = [
     { icon: Home, href: '/', label: 'Home' },
+    { icon: GraduationCap, href: '/curso', label: 'Curso' },
     { icon: Users, href: '/team', label: 'Team' },
     { icon: BookOpen, href: '/shelf', label: 'Shelf' },
+    { icon: Store, href: '/shop', label: 'Shop' },
+    { icon: Phone, href: '/contactos', label: 'Contactos' },
   ];
 
   return (
