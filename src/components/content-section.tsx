@@ -16,10 +16,7 @@ export default function ContentSection({
   buttonLink = "#"
 }: ContentSectionProps) {
   return (
-    <section 
-      className="py-20 px-4"
-      style={{ backgroundColor: '#000000' }}
-    >
+    <section className="py-20 px-4 relative z-10">
       <div className={`max-w-6xl mx-auto flex flex-col ${reverse ? 'md:flex-row-reverse' : 'md:flex-row'} gap-12 items-center`}>
         {/* Text Content */}
         <div className="flex-1 space-y-6">

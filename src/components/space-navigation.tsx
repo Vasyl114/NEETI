@@ -49,7 +49,7 @@ export default function SpaceNavigation() {
         style={{
           backgroundColor: 'rgba(11, 12, 34, 0.95)',
           borderLeft: '1px solid var(--digital-cyan)',
-          boxShadow: '-10px 0 30px rgba(0, 240, 255, 0.2)',
+          boxShadow: isMenuOpen ? '-10px 0 30px rgba(0, 240, 255, 0.2)' : 'none',
         }}
       >
         {/* Close Button - Only visible when menu is open */}
@@ -86,7 +86,8 @@ export default function SpaceNavigation() {
       {/* Overlay */}
       {isMenuOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-30 transition-opacity duration-300"
+          className="fixed inset-0 z-30 transition-all duration-300 backdrop-blur-sm"
+          style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)' }}
           onClick={() => setIsMenuOpen(false)}
         />
       )}

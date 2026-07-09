@@ -2,6 +2,7 @@
 
 import Footer from "@/components/footer";
 import SpaceNavigation from "@/components/space-navigation";
+import Image from "next/image";
 
 export default function CursoPage() {
   return (
@@ -46,7 +47,7 @@ export default function CursoPage() {
               ETI
             </h2>
             <div
-              className="space-y-6 text-lg leading-relaxed"
+              className="space-y-6 text-lg leading-relaxed text-justify"
               style={{ color: "var(--starlight)" }}
             >
               <p>
@@ -152,38 +153,75 @@ export default function CursoPage() {
               Casos de Sucesso:
             </h2>
             <div
-              className="space-y-6 text-lg leading-relaxed"
+              className="space-y-12 text-lg leading-relaxed text-justify"
               style={{ color: "var(--starlight)" }}
             >
-              <p>
-                <strong>Diogo Mónica</strong>, acabou o Mestrado em Engenharia
-                de Telecomunicações e Informática e recebeu convites para
-                estagiar na Google e no Facebook. Fazendo o impensável, recusou
-                e acabou por integrar a equipa da Square, empresa recém-formada
-                na altura, que fornece um software que permite o pagamento com
-                cartões através de dispositivos móveis. Diogo foi chefe da
-                equipa de segurança da empresa. Em Março de 2015 integrou a
-                equipa da Docker, na área da segurança.
-              </p>
-              <p>
-                <strong>Rui Costa</strong> fundou o IEEE Academic, uma
-                plataforma de aprendizagem online que disponibiliza vídeos com
-                conteúdos educativos com a colaboração dos professores da
-                instituição. Atualmente trabalha na Veniam, uma startup
-                portuguesa que atualmente tem sede em Silicon Valley, onde faz
-                parte da equipa responsável pelo desenho e desenvolvimento da
-                Cloud da Veniam.
-              </p>
-              <p>
-                <strong>Cristina Fonseca e Tiago Paiva</strong> acabaram o curso
-                em 2011 e, não ficando satisfeitos com as propostas que lhes
-                eram feitas, decidiram concorrer a um concurso de uma empresa
-                americana onde tinham que desenvolver uma aplicação que
-                permitisse um serviço telefónico através da web. Aqui nasceu a
-                Talkdesk, uma startup que permite a um cliente criar um
-                callcenter na Cloud. Atualmente, a Talkdesk tem sede na
-                California e em Portugal.
-              </p>
+              {/* Paragrafo 1: Placeholder a esquerda */}
+              <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
+                <div 
+                  className="relative w-40 h-40 rounded-full flex-shrink-0 overflow-hidden"
+                  style={{ border: "2px solid var(--digital-cyan)", boxShadow: "0 0 20px rgba(0, 240, 255, 0.3)" }}
+                >
+                  <Image src="/Diogo Mónica.jpg" alt="Diogo Mónica" fill className="object-cover" />
+                </div>
+                <p className="flex-1">
+                  <strong>Diogo Mónica</strong>, acabou o Mestrado em Engenharia
+                  de Telecomunicações e Informática e recebeu convites para
+                  estagiar na Google e no Facebook. Fazendo o impensável, recusou
+                  e acabou por integrar a equipa da Square, empresa recém-formada
+                  na altura, que fornece um software que permite o pagamento com
+                  cartões através de dispositivos móveis. Diogo foi chefe da
+                  equipa de segurança da empresa. Em Março de 2015 integrou a
+                  equipa da Docker, na área da segurança.
+                </p>
+              </div>
+
+              {/* Paragrafo 2: Placeholder a direita */}
+              <div className="flex flex-col md:flex-row-reverse gap-8 items-center md:items-start">
+                <div 
+                  className="relative w-40 h-40 rounded-full flex-shrink-0 overflow-hidden"
+                  style={{ border: "2px solid var(--digital-cyan)", boxShadow: "0 0 20px rgba(0, 240, 255, 0.3)" }}
+                >
+                  <Image src="/Rui Costa.jpeg" alt="Rui Costa" fill className="object-cover" />
+                </div>
+                <p className="flex-1">
+                  <strong>Rui Costa</strong> fundou o IEEE Academic, uma
+                  plataforma de aprendizagem online que disponibiliza vídeos com
+                  conteúdos educativos com a colaboração dos professores da
+                  instituição. Atualmente trabalha na Veniam, uma startup
+                  portuguesa que atualmente tem sede em Silicon Valley, onde faz
+                  parte da equipa responsável pelo desenho e desenvolvimento da
+                  Cloud da Veniam.
+                </p>
+              </div>
+
+              {/* Paragrafo 3: Dois placeholders a esquerda */}
+              <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
+                <div className="flex gap-4 flex-shrink-0">
+                  <div 
+                    className="relative w-32 h-32 rounded-full overflow-hidden"
+                    style={{ border: "2px solid var(--digital-cyan)", boxShadow: "0 0 15px rgba(0, 240, 255, 0.3)" }}
+                  >
+                    <Image src="/Cristina Fonseca.jpg" alt="Cristina Fonseca" fill className="object-cover" />
+                  </div>
+                  <div 
+                    className="relative w-32 h-32 rounded-full overflow-hidden"
+                    style={{ border: "2px solid var(--digital-cyan)", boxShadow: "0 0 15px rgba(0, 240, 255, 0.3)" }}
+                  >
+                    <Image src="/Tiago Paiva.jpg" alt="Tiago Paiva" fill className="object-cover" />
+                  </div>
+                </div>
+                <p className="flex-1">
+                  <strong>Cristina Fonseca e Tiago Paiva</strong> acabaram o curso
+                  em 2011 e, não ficando satisfeitos com as propostas que lhes
+                  eram feitas, decidiram concorrer a um concurso de uma empresa
+                  americana onde tinham que desenvolver uma aplicação que
+                  permitisse um serviço telefónico através da web. Aqui nasceu a
+                  Talkdesk, uma startup que permite a um cliente criar um
+                  callcenter na Cloud. Atualmente, a Talkdesk tem sede na
+                  California e em Portugal.
+                </p>
+              </div>
             </div>
           </div>
 

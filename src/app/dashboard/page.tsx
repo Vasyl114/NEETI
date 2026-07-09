@@ -1,20 +1,12 @@
 import DashboardNavbar from "@/components/dashboard-navbar";
 import { InfoIcon, UserCircle } from "lucide-react";
-import { redirect } from "next/navigation";
-import { createClient } from "../../../supabase/server";
 
-export default async function Dashboard() {
-  const supabase = await createClient();
-
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-
-  if (!user) {
-    return redirect("/sign-in");
-  }
-
-
+export default function Dashboard() {
+  const user = {
+    email: "demo@example.com",
+    id: "user-123",
+    role: "authenticated"
+  };
 
   return (
     <>

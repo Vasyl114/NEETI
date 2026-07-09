@@ -3,7 +3,7 @@ import { Facebook, Linkedin, Instagram, Youtube, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="w-full py-20 mt-32 flex flex-col items-center gap-8">
+    <footer className="w-full py-20 mt-32 flex flex-col items-center gap-8 relative z-10">
       {/* University Logo */}
       <div
         className="relative w-96 h-32 p-4 rounded-lg"

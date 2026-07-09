@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { ChevronDown } from "lucide-react";
+import Image from "next/image";
 
 export default function SpaceHero() {
   const [mounted, setMounted] = useState(false);
@@ -99,37 +100,19 @@ export default function SpaceHero() {
         }}
       />
 
-      {/* Shooting stars */}
-      {mounted && (
-        <>
-          {[...Array(3)].map((_, i) => (
-            <div
-              key={i}
-              className="shooting-star"
-              style={{
-                top: Math.random() * 60 + "%",
-                left: Math.random() * 120 + "%",
-                animationDelay: `${i * 5}s`,
-                animationDuration: `${3 + Math.random() * 2}s`,
-              }}
-            />
-          ))}
-        </>
-      )}
+      {/* Shooting stars moved to ShootingStars component */}
 
       {/* NEETI Logo and content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <h1
-          className={`text-7xl md:text-9xl font-bold mb-6 tracking-wider ${mounted ? "fade-in" : "opacity-0"}`}
+        <div
+          className={`flex justify-center mb-6 ${mounted ? "fade-in" : "opacity-0"}`}
           style={{
-            color: "var(--starlight)",
-            textShadow:
-              "0 0 30px var(--digital-cyan), 0 0 60px var(--plasma-magenta)",
             animationDelay: "0.2s",
+            filter: "drop-shadow(0 0 30px var(--digital-cyan)) drop-shadow(0 0 60px var(--plasma-magenta))"
           }}
         >
-          NEETI
-        </h1>
+          <Image src="/logo.png" alt="NEETI Logo" width={500} height={180} className="object-contain w-auto h-auto max-h-32 md:max-h-48" priority />
+        </div>
 
         <p
           className={`text-xl md:text-2xl mb-8 ${mounted ? "fade-in" : "opacity-0"}`}

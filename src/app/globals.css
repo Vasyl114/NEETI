@@ -9,7 +9,7 @@
     /* Celestial Circuit Color Palette */
     --cosmic-void: #0B0C22;
     --tungsten-steel: #8A95A5;
-    --plasma-magenta: #E000B8;
+    --plasma-magenta: #7b2cbf;
     --starlight: #F0F4F8;
     --digital-cyan: #00F0FF;
     
@@ -133,6 +133,7 @@
   box-shadow: 0 0 10px var(--digital-cyan);
   animation: shooting-star 3s linear infinite;
   z-index: 5;
+  pointer-events: none;
 }
 
 .shooting-star::before {
