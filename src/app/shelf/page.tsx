@@ -42,7 +42,7 @@ export default function ShelfPage() {
             Visita a nossa shelf aqui
           </p>
           <a
-            href="#"
+            href="https://drive.google.com/drive/u/1/folders/1VROFRxu-nNKWJG4u8ODAIyT2828bHYS5"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-8 py-4 text-xl font-bold rounded-lg transition-all duration-300"
